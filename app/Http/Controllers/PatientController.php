@@ -25,7 +25,7 @@ class PatientController extends Controller
 
         $patients = $query->orderBy('created_at', 'desc')->paginate(10)->withQueryString();
 
-        return Inertia::render('Patients/Index', [
+        return Inertia::render('admin/PatientDashboard', [
             'patients' => $patients,
             'filters' => $request->only('q'),
         ]);

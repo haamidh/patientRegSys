@@ -22,12 +22,14 @@ Route::get('register-patient', function () {
 Route::post('register-patient', [PatientController::class, 'store'])
     ->name('patients.store');
 
-// Route::get('patients', function () {
-//     return Inertia::render('Dashboard'); // Temporary redirect to dashboard
-// })->name('patients.index');
-
-Route::get('thankyou', function(){
+Route::get('thankyou', function () {
     return Inertia::render('ThankYou');
 })->name('thankyou');
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('admin/patients', [PatientController::class, 'index'])->name('patients.index');
+    Route::delete('admin/patients/{id}', [PatientController::class, 'destroy'])->name('patients.delete');
+});
 
 require __DIR__ . '/settings.php';
