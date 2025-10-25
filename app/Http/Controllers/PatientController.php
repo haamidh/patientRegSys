@@ -42,7 +42,7 @@ class PatientController extends Controller
         $data['created_by'] = Auth::id();
         Patient::create($data);
 
-        return redirect()->route('patients.index')->with('success', 'Patient created.');
+        return redirect()->route('thankyou')->with('success', 'Patient created.');
     }
 
     public function edit(Patient $patient)
