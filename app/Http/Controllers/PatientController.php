@@ -19,8 +19,8 @@ class PatientController extends Controller
         // optional server-side search
         if ($search = $request->input('q')) {
             $query->where('name', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%")
-                  ->orWhere('phone', 'like', "%{$search}%");
+                ->orWhere('email', 'like', "%{$search}%")
+                ->orWhere('phone', 'like', "%{$search}%");
         }
 
         $patients = $query->orderBy('created_at', 'desc')->paginate(10)->withQueryString();
