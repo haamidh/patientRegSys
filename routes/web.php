@@ -29,7 +29,11 @@ Route::get('thankyou', function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/patients', [PatientController::class, 'index'])->name('patients.index');
-    Route::delete('admin/patients/{id}', [PatientController::class, 'destroy'])->name('patients.delete');
+    Route::delete('admin/patients/{patient}', [PatientController::class, 'destroy'])->name('patients.destroy');
+    Route::get('admin/patients/{patient}/edit', [PatientController::class, 'edit'])
+        ->name('patients.edit');
+    Route::put('admin/patients/{patient}', [PatientController::class, 'update'])
+        ->name('patients.update');
 });
 
 require __DIR__ . '/settings.php';

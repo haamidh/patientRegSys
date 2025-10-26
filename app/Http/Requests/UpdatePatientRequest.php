@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdatePatientRequest extends FormRequest
 {
@@ -16,7 +17,13 @@ class UpdatePatientRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:191',
-            'email' => 'required|email|max:191|unique:patients,email,' . $this->route('patient'),
+            'email' => [
+                'required',
+                'email',
+                'max:191',
+                // Ensure we pass the patient id (not the model) to the unique rule
+                Rule::unique('patients', 'email')->ignore(optional($this->route('patient'))->id),
+            ],
             'phone' => 'required|string|max:30',
             'dob' => 'nullable|date',
             'address' => 'nullable|string',

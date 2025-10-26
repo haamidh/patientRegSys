@@ -47,7 +47,7 @@ class PatientController extends Controller
 
     public function edit(Patient $patient)
     {
-        return Inertia::render('Patients/Edit', [
+        return Inertia::render('admin/EditPatient', [
             'patient' => $patient
         ]);
     }
@@ -64,6 +64,4 @@ class PatientController extends Controller
         $patient->delete();
         return redirect()->route('patients.index')->with('success', 'Patient deleted.');
     }
-
-    // optional show()
 }
