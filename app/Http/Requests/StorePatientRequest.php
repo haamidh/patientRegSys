@@ -16,7 +16,7 @@ class StorePatientRequest extends FormRequest
         return [
             'name' => 'required|string|max:191',
             'email' => 'required|email|max:191|unique:patients,email',
-            'phone' => 'required|string|max:30',
+            'phone' => 'required|string|regex:/^[0-9]+$/',
             'dob' => 'nullable|date',
             'address' => 'nullable|string',
         ];

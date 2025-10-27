@@ -22,7 +22,7 @@ class Patient extends Model
     ];
 
     protected $casts = [
-        'dob'=>'date:Y-m-d',
+        'dob' => 'date:Y-m-d',
     ];
 
     public function creator()
@@ -31,9 +31,17 @@ class Patient extends Model
     }
 
     protected function dob(): Attribute
-{
-    return Attribute::make(
-        get: fn ($value) => $value ? date('Y-m-d', strtotime($value)) : null,
-    );
-}
+    {
+        return Attribute::make(
+            get: fn($value) => $value ? date('Y-m-d', strtotime($value)) : null,
+        );
+    }
+
+    protected function phone(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value,
+            set: fn($value) => preg_replace('/\D/', '', $value),
+        );
+    }
 }

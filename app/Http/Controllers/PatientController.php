@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function Pest\Laravel\get;
+
 class PatientController extends Controller
 {
-    // public list for admin - show Inertia page
+
     public function index(Request $request)
     {
         $query = Patient::query();
 
-        // optional server-side search
+
         if ($search = $request->input('q')) {
             $query->where('name', 'like', "%{$search}%")
                 ->orWhere('email', 'like', "%{$search}%")

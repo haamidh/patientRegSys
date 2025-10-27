@@ -4,10 +4,8 @@ import { onMounted } from 'vue';
 
 const page = usePage();
 
-// If user is already authenticated, redirect to admin patients dashboard
 onMounted(() => {
     if (page.props && page.props.auth && page.props.auth.user) {
-        // use a hard redirect so this works even without Ziggy/Inertia client helpers
         window.location.href = '/admin/patients';
     }
 });

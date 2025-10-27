@@ -24,7 +24,7 @@ class UpdatePatientRequest extends FormRequest
                 // Ensure we pass the patient id (not the model) to the unique rule
                 Rule::unique('patients', 'email')->ignore(optional($this->route('patient'))->id),
             ],
-            'phone' => 'required|string|max:30',
+            'phone' => 'required|string|regex:/^[0-9]+$/',
             'dob' => 'nullable|date',
             'address' => 'nullable|string',
         ];

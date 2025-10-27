@@ -73,7 +73,7 @@ const props = defineProps({
   }
 })
 
-// keep patient list reactive so it updates when Inertia props change
+
 const patientData = computed(() => props.patients.data || props.patients)
 const search = ref(props.filters.q || '')
 
@@ -93,7 +93,6 @@ function formatDate(dateString) {
 
 function calculateAge(dob) {
   if (!dob) return ''
-  // dob may be a date string with time; keep just the date portion
   const datePart = dob.split(' ')[0]
   const birth = new Date(datePart)
   if (isNaN(birth.getTime())) return ''
@@ -107,8 +106,7 @@ function calculateAge(dob) {
 }
 
 function performSearch() {
-  // route() (Ziggy) may or may not be available in the global scope.
-  // Fallback to the explicit URL if it's not present.
+
   const indexUrl = typeof route !== 'undefined' ? route('patients.index') : '/admin/patients'
 
   router.get(
