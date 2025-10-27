@@ -2,7 +2,7 @@
 
 A modern patient registration and management system built with Laravel 11, Inertia.js, and Vue 3. This application allows public patient registration and provides an admin dashboard for managing patient records.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 ### Backend
 - **Laravel 11** - PHP framework
@@ -28,19 +28,19 @@ A modern patient registration and management system built with Laravel 11, Inert
 - **Pest PHP** - Testing framework
 - **PHPUnit** - Unit testing
 
-## 📋 Features
+##  Features
 
-- ✅ Public patient registration
-- ✅ Admin authentication and authorization
-- ✅ Patient CRUD operations (Create, Read, Update, Delete)
-- ✅ Soft deletes for patient records
-- ✅ Search functionality in patient dashboard
-- ✅ Responsive design
-- ✅ Form validation (client & server-side)
-- ✅ Phone number sanitization (digits only)
-- ✅ Age calculation from date of birth
+-  Public patient registration
+-  Admin authentication and authorization
+-  Patient CRUD operations (Create, Read, Update, Delete)
+-  Soft deletes for patient records
+-  Search functionality in patient dashboard
+-  Responsive design
+-  Form validation (client & server-side)
+-  Phone number sanitization (digits only)
+-  Age calculation from date of birth
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 patientRegSys/
@@ -184,7 +184,7 @@ $user = App\Models\User::factory()->create([
 exit
 ```
 
-## 🌍 Environment Variables
+##  Environment Variables
 
 Key environment variables in `.env`:
 
@@ -220,7 +220,7 @@ MAIL_FROM_ADDRESS="hello@example.com"
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
-## 🎯 Common Commands
+##  Common Commands
 
 ### Docker Commands
 
@@ -329,7 +329,7 @@ docker compose exec db mysql -u homestead -psecret -D patientregsys -e "SHOW TAB
 docker compose exec db mysql -u homestead -psecret -D patientregsys -e "SELECT * FROM patients LIMIT 10;"
 ```
 
-## 🧪 Running Tests
+##  Running Tests
 
 The application includes comprehensive feature tests:
 
@@ -346,14 +346,14 @@ docker compose exec app php artisan test tests/Feature/AdminPatientCrudTest.php
 
 ### Test Coverage
 
-- ✅ Admin authentication and authorization
-- ✅ Patient CRUD operations
-- ✅ Form validation (email, phone, required fields)
-- ✅ Guest access restrictions
-- ✅ Soft delete functionality
-- ✅ Public patient registration flow
+-  Admin authentication and authorization
+-  Patient CRUD operations
+-  Form validation (email, phone, required fields)
+-  Guest access restrictions
+-  Soft delete functionality
+-  Public patient registration flow
 
-## 🔐 User Roles
+##  User Roles
 
 ### Admin User
 - Can access `/admin/patients` dashboard
@@ -400,7 +400,7 @@ docker compose exec app php artisan test tests/Feature/AdminPatientCrudTest.php
    docker compose exec app tail -f storage/logs/laravel.log
    ```
 
-## 📝 API Routes
+##  API Routes
 
 ### Public Routes
 - `GET /` - Welcome page
@@ -419,7 +419,7 @@ docker compose exec app php artisan test tests/Feature/AdminPatientCrudTest.php
 - `PUT /admin/patients/{patient}` - Update patient
 - `DELETE /admin/patients/{patient}` - Soft delete patient
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Port already in use
 ```bash
@@ -456,11 +456,11 @@ docker compose ps
 docker compose restart
 ```
 
-## 📄 License
+##  License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## 👥 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -468,10 +468,10 @@ This project is open-sourced software licensed under the [MIT license](https://o
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Support
+##  Support
 
 For support, email haamidh@example.com or open an issue in the repository.
 
 ---
 
-**Built with ❤️ using Laravel, Vue, and Docker**
+**Built using Laravel, Vue, and Docker**
