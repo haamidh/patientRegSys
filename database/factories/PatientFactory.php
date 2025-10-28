@@ -20,7 +20,7 @@ class PatientFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'dob' => $this->faker->date(),
             'address' => $this->faker->address,
-            'created_by' => null, // or pick a user id
+            'created_by' => null,
         ];
     }
 }
